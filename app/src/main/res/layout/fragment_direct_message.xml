@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.directMessage.DirectMessageFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/margin_medium"
+        app:layout_constraintBottom_toTopOf="@+id/save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:contentDescription="@string/whatsapp_logo"
+            app:srcCompat="@drawable/ic_whatsapp_fill" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/direct_message" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginVertical="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mobNo1"
+                style="@style/TextInputLayoutStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@id/call_log"
+                android:elevation="10dp"
+                app:boxBackgroundColor="@color/textColorTertiary"
+                android:hint="Phone Number"
+                app:endIconMode="clear_text"
+                app:boxBackgroundMode="filled"
+                app:errorTextAppearance="@style/subtitle1"
+                app:hintTextAppearance="@style/body1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mobNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|phone"
+                    android:textAppearance="@style/body1"
+                    app:boxBackgroundColor="@color/textColorTertiary"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/call_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/margin_extra_small"
+                android:clickable="true"
+                android:src="@drawable/ic_call_log"
+                app:fabSize="mini" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="@string/message_optional"
+            android:layout_gravity="start"
+            android:textAppearance="@style/body1" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/TextInputLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundMode="filled"
+            app:errorTextAppearance="@style/subtitle1"
+            app:hintTextAppearance="@style/body1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:inputType="text|textMultiLine|textLongMessage"
+                android:lines="4"
+                android:textAppearance="@style/body1"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium"
+        android:layout_weight="1"
+        android:padding="16dp"
+        android:text="@string/send_message"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

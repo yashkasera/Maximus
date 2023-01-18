@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/settingsFragment"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.craft404.maximus.ui.settings.SettingsFragment"
+        android:label="Settings">
+        <action
+            android:id="@+id/action_settingsFragment_to_importantFiltersFragment"
+            app:destination="@id/importantFiltersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/importantFiltersFragment"
+        android:name="com.craft404.maximus.ui.settings.ImportantFiltersFragment"
+        android:label="Filter Important Messages"
+        tools:layout="@layout/important_filters_fragment">
+        <action
+            android:id="@+id/action_importantFiltersFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+</navigation>

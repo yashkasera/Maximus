@@ -1,34 +1,90 @@
-<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingVertical="@dimen/margin_medium"
+    app:iconSpaceReserved="false">
 
-    <PreferenceCategory app:title="@string/messages_header">
+    <PreferenceCategory
+        android:title="General"
+        app:iconSpaceReserved="false">
 
         <EditTextPreference
-            app:key="signature"
-            app:title="@string/signature_title"
+            android:dialogMessage="@string/name_input_dialog_text"
+            android:dialogTitle="Your Name"
+            android:key="user_name"
+            android:positiveButtonText="SAVE"
+            android:singleLine="true"
+            android:title="Your Name"
+            app:iconSpaceReserved="false"
             app:useSimpleSummaryProvider="true" />
 
-        <ListPreference
-            app:defaultValue="reply"
-            app:entries="@array/reply_entries"
-            app:entryValues="@array/reply_values"
-            app:key="reply"
-            app:title="@string/reply_title"
-            app:useSimpleSummaryProvider="true" />
+        <Preference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="important_filters"
+            android:title="Important Message Filters"
+            app:iconSpaceReserved="false"
+            app:summary="Customise what is important for you"/>
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="@string/sync_header">
+    <PreferenceCategory
+        android:iconSpaceReserved="false"
+        app:iconSpaceReserved="false"
+        app:title="Notifications">
 
-        <SwitchPreferenceCompat
-            app:key="sync"
-            app:title="@string/sync_title" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="notifications_all"
+            android:summaryOff="Turn on notifications to stay updated"
+            android:title="All Notifications"
+            app:iconSpaceReserved="false" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:dependency="notifications_all"
+            android:key="notification_elite"
+            android:summaryOff="Notifications from Elite Gang Members will not be shown"
+            android:title="From Elite Gang"
+            app:iconSpaceReserved="false" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:dependency="notifications_all"
+            android:summaryOff="You will not get a notification for any important message"
+            android:title="Important Messages"
+            app:iconSpaceReserved="false"
+            app:key="notification_important" />
+        <SwitchPreference
+            android:defaultValue="true"
+            android:dependency="notifications_all"
+            android:key="notification_mentions"
+            android:summaryOff="You will not get a notification each time someone mentions your name."
+            android:title="Mentions"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
 
-        <SwitchPreferenceCompat
-            app:dependency="sync"
-            app:key="attachment"
-            app:summaryOff="@string/attachment_summary_off"
-            app:summaryOn="@string/attachment_summary_on"
-            app:title="@string/attachment_title" />
+    <PreferenceCategory
+        android:title="Reset"
+        app:iconSpaceReserved="false">
+        <Preference
+            android:title="Elite Members"
+            app:iconSpaceReserved="false"
+            app:key="elite"
+            app:summary="Removes all elite members. Their messages will not be deleted" />
+        <Preference
+            android:title="Spammers"
+            app:iconSpaceReserved="false"
+            app:key="spammers"
+            app:summary="Removes all Spammers. Their messages will not be deleted" />
+        <Preference
+            android:title="Clear App Storage"
+            app:iconSpaceReserved="false"
+            app:key="clearApp"
+            app:summary="Clears all the groups,members and messages (including pinned and important) and resets the status of al the members." />
+
+        <Preference
+            android:title="Clear All Data"
+            app:iconSpaceReserved="false"
+            app:key="clearAll"
+            app:summary="Deletes any media you have downloaded through this app. This includes status video downloads, deleted media and all the messages" />
 
     </PreferenceCategory>
 

@@ -1,12 +1,32 @@
 <resources>
     <!-- Reply Preference -->
-    <string-array name="reply_entries">
-        <item>Reply</item>
-        <item>Reply to all</item>
+
+    <string-array name="important_words">
+        <item>deadline</item>
+        <item>death</item>
+        <item>important</item>
+        <item>internship</item>
+        <item>meet</item>
+        <item>meets</item>
+        <item>meeting</item>
+        <item>meetings</item>
+        <item>project</item>
+        <item>salary</item>
+        <item>submission</item>
+        <item>submit</item>
+        <item>911</item>
+        <item>emergency</item>
+        <item>today</item>
+        <item>tomorrow</item>
+        <item>yesterday</item>
+        <item>task</item>
+        <item>attention</item>
+        <item>document</item>
+        <item>certificate</item>
+        <item>assignment</item>
+        <item>quiz</item>
+        <item>exam</item>
+
     </string-array>
 
-    <string-array name="reply_values">
-        <item>reply</item>
-        <item>reply_all</item>
-    </string-array>
 </resources>
